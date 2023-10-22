@@ -8,7 +8,7 @@ import list.model.Lista
   public class User {
     @Id
     @GenerateValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private String name;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -17,35 +17,37 @@ import list.model.Lista
     @OneToOne(cascade = cascadeType.ALL)
     private Balance balance;
 
-    public Long getId() {
+    @OneToOne(cascade = cascadeType.ALL)
+    private List<Products> products;
+
+    public String getId() {
       return id;
     }
-
-    public void setId(Long id) {
+    public void setId(String id) {
       this.id = id;
     }
-
     public String getName() {
       return name;
     }
-
     public void setName(String name) {
       this.name = name;
     }
-
     public Account getAccount() {
       return account;
     }
-
     public void setAccount(Account account) {
       this.account = account;
     }
-
-    public Balance getBalance() {
+    public Double getBalance() {
       return balance;
     }
-
-    public void setBalance(Balance balance) {
+    public void setBalance(Double balance) {
       this.balance = balance;
     }
-  }
+    public List<Products> getProducts() {
+      return products;
+    }
+    public void setProducts(List<Products> products) {
+      this.products = products;
+    }
+}

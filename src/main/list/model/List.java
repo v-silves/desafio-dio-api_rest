@@ -13,8 +13,10 @@ const listaCompras = {
   produts: [
     {
       "id": number,
+      "name": "string",
       "group": "string",
       "quantity": number
+      "price": number
     }
   ]
 }

@@ -1,0 +1,31 @@
+classDiagram {
+  "user": [
+    {
+      "id": "String",
+      "name": "String",
+      "email": "String",
+      "balance": Double
+    }
+  ],
+  "product": [
+    {
+      "id": number,
+      "name": "String",
+      "group": "String",
+      "price": Double
+      "quantity": number,
+      "finalprice": Map<Double, number>
+    }
+  ],
+  "marketList": [
+    {
+      "id": "String",
+      "user": "user",
+      "products": List<product>,
+      "total": Double
+    }
+  ],
+
+  marketList "1" o-- "1" user;
+  marketList "1" o-- "1..*" product;
+}
